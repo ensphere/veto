@@ -1,0 +1,19 @@
+{
+  "name": "ensphere-veto",
+  "description": "Overrides default styling and javascript helpers for ensphere admin",
+  "main": "",
+  "authors": [
+    "Luke Snowden",
+    "Tim Lenton"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ensphere/veto",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
