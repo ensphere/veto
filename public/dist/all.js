@@ -9,6 +9,8 @@ $.fn.ensphere = function() {
      */
     this.veto = function() {
 
+        var modal;
+
         /**
          *
          * @param errors
