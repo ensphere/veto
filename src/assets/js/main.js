@@ -2,12 +2,14 @@
 /**
  * Ensphere Container
  */
-$.fn.ensphere = function() {
+$.fn.ensphere = new function() {
 
     /**
      * Veto
      */
-    this.veto = function() {
+    this.veto = new function() {
+
+        var modal;
 
         /**
          *
@@ -42,6 +44,7 @@ $.fn.ensphere = function() {
                 closeModal  : true
             }, _callbacks);
             var attributes = $.fn.ensphere.veto.getAttributes( node );
+            $(node).blur();
             $.get( attributes.href, function( response ) {
                 callbacks.onResponse( response, attributes );
                 if( typeof $( response )[0].ownerDocument !== 'undefined' ) {
@@ -104,10 +107,10 @@ $.fn.ensphere = function() {
                                     if( $(response)[0].id ) {
                                         callbacks.onComplete( response, attributes, modal );
                                     } else {
-                                        modalResponse( response, attributes, callbacks );
+                                        $.fn.ensphere.veto.modalResponse( response, attributes, callbacks );
                                     }
                                 },
-                                error: function ( xhr, textstatus, errorThrown ) {
+                                error: function ( xhr, textstatus ) {
                                     switch( xhr.status ) {
                                         case 422 :
                                             var errors = [];
@@ -139,10 +142,5 @@ $.fn.ensphere = function() {
                 }
             }).semanticUiModal('show');
         };
-
-        return this;
     };
-
-    return this;
-
 };
