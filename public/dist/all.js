@@ -28,6 +28,23 @@ $.fn.ensphere = new function() {
 
         /**
          *
+         * @param selector
+         * @param context
+         */
+        this.wysiwyg = function( selector, context )
+        {
+            context = context || $(document);
+            $( selector, context ).redactor({
+                minHeight : 300,
+                toolbarFixed : false,
+                cleanStyleOnEnter : true,
+                deniedTags : ['html', 'head', 'link', 'body', 'meta', 'script', 'style', 'applet', 'span'],
+                plugins : [ 'mediaManager' ]
+            });
+        };
+
+        /**
+         *
          * @param node
          * @param _callbacks
          */

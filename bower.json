@@ -9,6 +9,9 @@
   "license": "MIT",
   "homepage": "https://github.com/ensphere/veto",
   "private": true,
+  "requires" : {
+    "ensphere-rotcader" : "*"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
