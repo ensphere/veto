@@ -45,6 +45,28 @@ $.fn.ensphere = new function() {
 
         /**
          *
+         * @param selector
+         * @param el
+         * @returns {*}
+         */
+        this.select = function( selector, el ) {
+            if ( ! el ) { el = document; }
+            return Array.prototype.slice.call( el.querySelectorAll( selector ) );
+        };
+
+        /**
+         * 
+         * @param elm
+         * @param callback
+         */
+        this.clickEvent = function( elm, callback )
+        {
+            elm.removeEventListener( "click", callback );
+            elm.addEventListener( "click", callback );
+        };
+
+        /**
+         *
          * @param node
          * @param _callbacks
          */
