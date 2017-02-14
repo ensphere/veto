@@ -55,6 +55,16 @@ $.fn.ensphere = new function() {
         };
 
         /**
+         *
+         * @param node
+         * @param _callbacks
+         */
+        this.singleSelect = function( selector, el ) {
+            if ( ! el ) { el = document; }
+            return el.querySelector( selector );
+        };
+
+        /**
          * 
          * @param elm
          * @param callback
@@ -64,6 +74,32 @@ $.fn.ensphere = new function() {
             elm.removeEventListener( "click", callback );
             elm.addEventListener( "click", callback );
         };
+
+        /**
+         *
+         * @param node
+         * @param _callbacks
+         */
+        this.keyUpEvent = function( elm, callback )
+        {
+            if( elm ) {
+                elm.removeEventListener( "keyup", callback );
+                elm.addEventListener( "keyup", callback );
+            }
+        };
+
+        /**
+         *
+         * @param node
+         * @param _callbacks
+         */
+        this.focusEvent = function( elm, callback )
+        {
+            if( elm ) {
+                elm.removeEventListener( "focus", callback );
+                elm.addEventListener( "focus", callback );
+            }
+    };
 
         /**
          *
