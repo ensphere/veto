@@ -11,6 +11,8 @@ $.fn.ensphere = new function() {
 
         var modal;
 
+        var wysiwygSelectors = [];
+
         /**
          *
          * @param errors
@@ -28,19 +30,47 @@ $.fn.ensphere = new function() {
 
         /**
          *
-         * @param selector
-         * @param context
+         * @param obj
          */
-        this.wysiwyg = function( selector, context )
+        var attachWYSIWYG = function( obj )
         {
-            context = context || $(document);
-            $( selector, context ).redactor({
+            obj.data( 'wysiwyg', true );
+            obj.redactor({
                 minHeight : 300,
                 toolbarFixed : false,
                 cleanStyleOnEnter : true,
                 deniedTags : ['html', 'head', 'link', 'body', 'meta', 'script', 'style', 'applet', 'span'],
                 plugins : [ 'mediaManager' ]
             });
+        };
+
+        var checkForNewWysiwygInstances = function()
+        {
+            setTimeout( function(){
+                wysiwygSelectors.forEach( function(selector) {
+                    $( selector + ':visible' ).each( function(){
+                        if( ! $(this).data( 'wysiwyg' ) ) {
+                            attachWYSIWYG( $(this) );
+                        }
+                    });
+                });
+            }, 200 );
+
+        };
+
+        $(document).bind( 'click.veto', checkForNewWysiwygInstances );
+
+
+        /**
+         *
+         * @param selector
+         * @param context
+         */
+        this.wysiwyg = function( selector, context )
+        {
+            wysiwygSelectors.push( selector );
+            context = context || $(document);
+            attachWYSIWYG( $( selector, context ) );
         };
 
         /**
@@ -99,7 +129,7 @@ $.fn.ensphere = new function() {
                 elm.removeEventListener( "focus", callback );
                 elm.addEventListener( "focus", callback );
             }
-    };
+        };
 
         /**
          *
