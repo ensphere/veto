@@ -13,6 +13,34 @@ $.fn.ensphere = new function() {
 
         var wysiwygSelectors = [];
 
+        var parseNotifications = function()
+        {
+            $('[type="ensphere/notification"]').each(function(){
+                var options = JSON.parse( $(this).html() );
+                new PNotify( options );
+            });
+        };
+
+        var removePageLoader = function()
+        {
+            var loader = $('#loader');
+            if( loader.length ) {
+                loader.fadeOut( 200, function(){
+                    $(this).remove();
+                });
+            }
+        };
+
+        var onDocumentReady = function()
+        {
+            parseNotifications();
+        };
+
+        var onWindowLoad = function()
+        {
+            removePageLoader();
+        };
+
         /**
          *
          * @param errors
@@ -75,6 +103,7 @@ $.fn.ensphere = new function() {
                 .replace( /-+$/, '' );            // Trim - from end of text
         };
 
+
         /**
          *
          * @param selector
@@ -109,7 +138,7 @@ $.fn.ensphere = new function() {
         };
 
         /**
-         * 
+         *
          * @param elm
          * @param callback
          */
@@ -261,5 +290,9 @@ $.fn.ensphere = new function() {
                 }
             }).semanticUiModal('show');
         };
+
+        $(document).ready(onDocumentReady);
+        $(window).load(onWindowLoad);
+
     };
 };
