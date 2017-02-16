@@ -11,7 +11,9 @@
   "private": true,
   "dependencies" : {
     "ensphere-rotcader" : "*",
-    "semantic-ui-modal-no-conflict" : "*"
+    "semantic-ui-modal-no-conflict" : "*",
+    "semantic-ui-dimmer" : "*",
+    "semantic-ui-transition" : "*"
   },
   "ignore": [
     "**/.*",
