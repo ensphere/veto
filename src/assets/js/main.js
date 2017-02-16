@@ -31,9 +31,15 @@ $.fn.ensphere = new function() {
             }
         };
 
+        var openMenuWhenActiveUrlParentIsPresent = function()
+        {
+            $( '> a', $('#sidebar-menu .active-url-parent:eq(0)').parents('#sidebar-menu .has-children:eq(0)') ).trigger( 'click' );
+        };
+
         var onDocumentReady = function()
         {
             parseNotifications();
+            openMenuWhenActiveUrlParentIsPresent();
         };
 
         var onWindowLoad = function()
