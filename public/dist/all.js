@@ -95,6 +95,14 @@ $.fn.ensphere = new function() {
         $(document).bind( 'click.veto', checkForNewWysiwygInstances );
 
         /**
+         * Refreshes the modal
+         */
+        this.refreshModal = function()
+        {
+            modal.semanticUiModal( 'refresh' );
+        };
+
+        /**
          *
          * @param text
          * @returns {string}
