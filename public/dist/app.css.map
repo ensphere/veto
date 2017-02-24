@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.css"],"names":[],"mappings":"AAAA","file":"app.css","sourcesContent":[]}
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AACuB;EACnB,aAAa,EACd","file":"app.css","sourcesContent":[".semantic-ui-modal {\n  .redactor-toolbar li a {\n    padding: 9px;\n  }\n}\n"]}
