@@ -68,6 +68,7 @@ $.fn.ensphere = new function() {
          */
         var attachWYSIWYG = function( obj )
         {
+            if( obj.data( 'wysiwyg' ) ) return false;
             obj.data( 'wysiwyg', true );
             obj.redactor({
                 minHeight : 300,
