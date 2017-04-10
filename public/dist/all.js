@@ -69,13 +69,31 @@ $.fn.ensphere = new function() {
         var attachWYSIWYG = function( obj )
         {
             if( obj.data( 'wysiwyg' ) ) return false;
+            $.Redactor.prototype.scriptbuttons = function()
+            {
+                return {
+                    init: function()
+                    {
+                        var cite = this.button.add('cite', 'Cite');
+
+                        this.button.addCallback(cite, this.scriptbuttons.formatCite);
+
+                        // Set icons
+                        this.button.setAwesome('cite','fa-quote-right');
+                    },
+                    formatCite: function()
+                    {
+                        this.inline.format('cite');
+                    }
+                };
+            };
             obj.data( 'wysiwyg', true );
             obj.redactor({
                 minHeight : 300,
                 toolbarFixed : false,
                 cleanStyleOnEnter : true,
                 deniedTags : ['html', 'head', 'link', 'body', 'meta', 'script', 'style', 'applet', 'span'],
-                plugins : [ 'mediaManager' ]
+                plugins : [ 'mediaManager', 'scriptbuttons' ]
             });
         };
 
