@@ -113,6 +113,28 @@ $.fn.ensphere = new function() {
 
         $(document).bind( 'click.veto', checkForNewWysiwygInstances );
 
+        $( ".js-delete" ).bind( "click", function(e) {
+            var button = $(this);
+            e.preventDefault();
+            swal({
+                title: "Are you sure?",
+                text: "This action cannot be reversed",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: 'btn-danger',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: "No, cancel please!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function( isConfirm ) {
+                if ( isConfirm ) {
+                    window.location = button.attr('href');
+                } else {
+                    swal.close();
+                }
+            });
+        });
+
         /**
          * Refreshes the modal
          */
