@@ -90,7 +90,7 @@ $.fn.ensphere = new function() {
             obj.data( 'wysiwyg', true );
             obj.redactor({
                 minHeight : 300,
-                toolbarFixed : false,
+                toolbarFixed : true,
                 cleanStyleOnEnter : true,
                 deniedTags : ['html', 'head', 'link', 'body', 'meta', 'script', 'style', 'applet', 'span'],
                 plugins : [ 'mediaManager', 'scriptbuttons' ]
