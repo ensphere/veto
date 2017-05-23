@@ -92,7 +92,7 @@ $.fn.ensphere = new function() {
                 minHeight : 300,
                 toolbarFixed : true,
                 cleanStyleOnEnter : true,
-                deniedTags : ['html', 'head', 'link', 'body', 'meta', 'script', 'style', 'applet', 'span'],
+                deniedTags : ['html', 'head', 'link', 'body', 'meta', 'script', 'style', 'applet' ],
                 plugins : [ 'mediaManager', 'scriptbuttons' ]
             });
         };
