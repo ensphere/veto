@@ -1,5 +1,5 @@
 {
-  "name" : "ensphere-veto",
+  "name": "ensphere-veto",
   "private": false,
   "devDependencies": {
     "gulp": "^3.8.8"

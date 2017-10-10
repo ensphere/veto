@@ -39,7 +39,7 @@ $.fn.ensphere = new function() {
         var onDocumentReady = function()
         {
             parseNotifications();
-            openMenuWhenActiveUrlParentIsPresent();
+            //openMenuWhenActiveUrlParentIsPresent();
         };
 
         var onWindowLoad = function()
