@@ -80,6 +80,27 @@ $.fn.ensphere = new function() {
 
                         // Set icons
                         this.button.setAwesome('cite','fa-quote-right');
+
+                        /**
+                         * Add a dropdown list containing elements that can be applied to the selected text:
+                         */
+                        var dropdown = {
+                            'Button': {
+                                'title': 'Button',
+                                'func': function() {
+                                    // this.selection.format('a.c-btn.c-btn--primary');
+                                    console.log(this.selection.getNodes());
+                                    $.each(this.selection.getNodes(), function(key, item) {
+                                        $(item).replaceWith($('<button>' + this.innerHTML + '</button>'));
+                                    });
+                                    this.code.sync();
+                                }
+                            }
+                        };
+
+                        var button = this.button.add('styles', 'Other Elements');
+                        this.button.addDropdown(button, dropdown);
+                        this.button.setAwesome('styles', 'fa-cogs');
                     },
                     formatCite: function()
                     {
