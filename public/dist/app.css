@@ -1,3 +1,39 @@
+.c-ajax-filter {
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 20px;
+  position: relative;
+  width: 800px;
+  max-width: 100%; }
+  .c-ajax-filter__label {
+    display: block; }
+  .c-ajax-filter__input {
+    width: 100%;
+    border-radius: .28571429rem; }
+  .c-ajax-filter__results {
+    position: absolute;
+    z-index: 10;
+    background: white;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    border-radius: .28571429rem;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: -20px; }
+    .c-ajax-filter__results ul {
+      margin: 0;
+      padding: 0;
+      display: block; }
+    .c-ajax-filter__results__item {
+      display: block;
+      padding: 5px 10px;
+      border-bottom: 1px solid rgba(34, 36, 38, 0.15); }
+      .c-ajax-filter__results__item--hover {
+        background: rgba(45, 171, 94, 0.1);
+        cursor: pointer; }
+      .c-ajax-filter__results__item:last-child {
+        border-bottom: none; }
+
 .semantic-ui-modal .redactor-toolbar li a {
   padding: 9px; }
 

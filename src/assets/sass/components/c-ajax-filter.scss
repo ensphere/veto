@@ -1,0 +1,55 @@
+
+.c-ajax-filter {
+	
+	margin-top: 30px;
+	border-bottom: 2px solid #ddd;
+	padding-bottom: 20px;
+	position: relative;
+	width: 800px;
+	max-width: 100%;
+
+	&__label {
+		display: block;
+	}
+	
+	&__input {
+		width: 100%;
+		border-radius: .28571429rem;
+	}
+	
+	&__results {
+		
+		position: absolute;
+		z-index: 10;
+		background: white;
+		border: 1px solid rgba(34,36,38,.15);
+		border-radius: .28571429rem;
+		top: 100%; left: 0; right: 0;
+		margin-top: -20px;
+		
+		ul {
+			margin: 0;
+			padding: 0;
+			display: block;
+		}
+	
+		&__item {
+			
+			display: block;
+			padding: 5px 10px;
+			border-bottom: 1px solid rgba(34,36,38,.15);
+			
+			&--hover {
+				background: rgba(45,171,94,.1);
+				cursor: pointer;
+			}
+			
+			&:last-child {
+				border-bottom: none;
+			}
+			
+		}
+	
+	}
+
+}
