@@ -59,7 +59,7 @@ $.fn.ensphere = new function() {
                     var text = options.displayRow( item );
                     var resultItem = $( '<div />' ).html( text ).addClass( 'c-ajax-filter__results__item' );
                     items[uid] = item;
-                    api.results.append( resultItem );
+                    api.results.prepend( resultItem );
                     resultItemEvents( resultItem );
                     resultItem[0].uid = uid;
                 }
@@ -77,7 +77,7 @@ $.fn.ensphere = new function() {
                 elm.on( 'mouseenter', onItemMouseEnterHandler );
                 elm.on( 'mouseleave', onItemMouseLeaveHandler );
                 elm.on( 'click', function(e) {
-                    options.onSelectedItem( $(this), e, items[$(this)[0].uid] );
+                    options.onSelectedItem( $(this), e, items[ $( this )[0].uid ] );
                     closeAndClearSearchBox();
                 });
             }
