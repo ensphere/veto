@@ -53,7 +53,8 @@ $.fn.ensphere = new function() {
             var populateResults = function( response )
             {
                 api.results.html('');
-                response.forEach( function( item ) {
+                for( var i in response ) {
+                    var item = response[i];
                     var uid = uuidv4();
                     var text = options.displayRow( item );
                     var resultItem = $( '<div />' ).html( text ).addClass( 'c-ajax-filter__results__item' );
@@ -61,7 +62,7 @@ $.fn.ensphere = new function() {
                     api.results.append( resultItem );
                     resultItemEvents( resultItem );
                     resultItem[0].uid = uid;
-                });
+                }
                 api.results.show();
             };
 
