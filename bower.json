@@ -13,7 +13,8 @@
     "ensphere-rotcader" : "*",
     "semantic-ui-modal-no-conflict" : "*",
     "semantic-ui-dimmer" : "*",
-    "semantic-ui-transition" : "*"
+    "semantic-ui-transition" : "*",
+    "DanielWatsonPM/redactor-properties": "master"
   },
   "ignore": [
     "**/.*",
