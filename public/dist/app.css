@@ -32,6 +32,67 @@
       .c-ajax-filter__results__item:last-child {
         border-bottom: none; }
 
+.l-small-right-sidebar {
+  display: -ms-flexbox;
+  display: flex; }
+  .l-small-right-sidebar .file.image.outline.icon {
+    font-size: 78px; }
+    .l-small-right-sidebar .file.image.outline.icon:after {
+      font-family: "FontAwesome";
+      content: "\f03e";
+      text-decoration: none;
+      font-style: normal; }
+  .l-small-right-sidebar .media-placeholder {
+    border-radius: 4px;
+    overflow: hidden; }
+  .l-small-right-sidebar .no-media {
+    text-align: center;
+    padding-top: 18px;
+    opacity: 0.6;
+    background: white; }
+    .l-small-right-sidebar .no-media.has-selected {
+      opacity: 1; }
+      .l-small-right-sidebar .no-media.has-selected i {
+        display: none; }
+  .l-small-right-sidebar .form-control {
+    border-radius: 4px; }
+  .l-small-right-sidebar .form-group {
+    display: block; }
+    .l-small-right-sidebar .form-group > label.control-label {
+      display: block;
+      float: none;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 7px; }
+    .l-small-right-sidebar .form-group > .col-md-6.col-sm-6.col-xs-12 {
+      width: 100%;
+      float: none;
+      display: block; }
+  .l-small-right-sidebar__left {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 20px 20px 20px 0; }
+  .l-small-right-sidebar__right {
+    -ms-flex: 0 0 370px;
+    flex: 0 0 370px;
+    background: #F7F7F7;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #E6E9ED; }
+    .l-small-right-sidebar__right .checkbox {
+      float: left;
+      margin-right: 10px; }
+      .l-small-right-sidebar__right .checkbox label {
+        padding-left: 0; }
+    .l-small-right-sidebar__right .tagsinput {
+      background: none; }
+      .l-small-right-sidebar__right .tagsinput #tags_addTag input {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px; }
+      .l-small-right-sidebar__right .tagsinput span.tag {
+        background: #1abc9c; }
+
 .semantic-ui-modal .redactor-toolbar li a {
   padding: 9px; }
 
