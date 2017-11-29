@@ -210,7 +210,7 @@ $.fn.ensphere = new function() {
                 options.tableColumns.forEach( function( column ) {
                     $('<th />').text( column ).appendTo( row );
                 });
-                $('<th />').text( 'actions' ).appendTo( row );
+                $('<th width="95" />').text( 'actions' ).appendTo( row );
                 row.appendTo( api.table.head );
                 getCurrentList();
 
