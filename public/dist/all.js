@@ -210,7 +210,7 @@ $.fn.ensphere = new function() {
                 options.tableColumns.forEach( function( column ) {
                     $('<th />').text( column ).appendTo( row );
                 });
-                $('<th />').text( 'actions' ).appendTo( row );
+                $('<th width="95" />').text( 'actions' ).appendTo( row );
                 row.appendTo( api.table.head );
                 getCurrentList();
 
@@ -344,6 +344,8 @@ $.fn.ensphere = new function() {
                 minHeight : 300,
                 toolbarFixed : true,
                 cleanStyleOnEnter : true,
+                buttons: ['html', 'formatting', 'bold', 'italic', 'deleted', 'unorderedlist', 'orderedlist',
+                  'outdent', 'indent', 'link', 'alignment', 'horizontalrule'],
                 deniedTags : ['html', 'head', 'link', 'body', 'meta', 'script', 'style', 'applet' ],
                 plugins : [ 'mediaManager', 'scriptbuttons', 'properties' ]
             });
