@@ -345,6 +345,8 @@ $.fn.ensphere = new function() {
                 minHeight : 300,
                 toolbarFixed : true,
                 cleanStyleOnEnter : true,
+                buttons: ['html', 'formatting', 'bold', 'italic', 'deleted', 'unorderedlist', 'orderedlist',
+                  'outdent', 'indent', 'link', 'alignment', 'horizontalrule'],
                 deniedTags : ['html', 'head', 'link', 'body', 'meta', 'script', 'style', 'applet' ],
                 plugins : [ 'mediaManager', 'scriptbuttons', 'properties' ]
             });
