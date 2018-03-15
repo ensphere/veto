@@ -32,6 +32,27 @@
       .c-ajax-filter__results__item:last-child {
         border-bottom: none; }
 
+.c-character-limiter {
+  position: relative; }
+  .c-character-limiter__input {
+    padding-right: 30px; }
+  .c-character-limiter__counting {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 33px;
+    background: #2dab5e;
+    color: white;
+    line-height: 34px;
+    border-radius: 0 4px 4px 0;
+    text-align: center; }
+    .c-character-limiter__counting.warning {
+      background: #f39c12; }
+    .c-character-limiter__counting.danger {
+      background: #e74c3c; }
+
 .l-small-right-sidebar {
   display: -ms-flexbox;
   display: flex; }
