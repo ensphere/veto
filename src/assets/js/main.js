@@ -291,6 +291,7 @@ $.fn.ensphere = new function() {
         var onDocumentReady = function()
         {
             parseNotifications();
+            CharacterLimiter();
             //openMenuWhenActiveUrlParentIsPresent();
         };
 
@@ -360,6 +361,76 @@ $.fn.ensphere = new function() {
                     });
                 });
             }, 200 );
+
+        };
+
+        var CharacterLimiter = function()
+        {
+
+            var app = function( self )
+            {
+
+                var elm = $(self);
+
+                var startElm = elm.clone();
+
+                var counting = null;
+
+                var input = null;
+
+                var placeholder = null;
+
+                var maxChars = parseInt( elm.attr( 'data-character-limit' ) );
+
+                /**
+                 *
+                 * @returns {jQuery|HTMLElement}
+                 */
+                var buildPlaceholder = function()
+                {
+                    var template = '<div class="c-character-limiter"><div data-for="input" class="c-character-limiter__input"></div><div class="count"><span class="c-character-limiter__counting" data-for="counting">0</span></div></div>';
+                    return $( template );
+                };
+
+                var destroy = function()
+                {
+
+                };
+
+                var setCharCount = function()
+                {
+                    var remaining = maxChars - elm.val().length;
+                    counting.text(remaining).removeClass( 'danger warning' );
+                    if( remaining <= 0 ) {
+                        counting.addClass( 'danger' );
+                    } else if( remaining <= 10 ) {
+                        counting.addClass( 'warning' );
+                    }
+                };
+
+                var start = function()
+                {
+                    placeholder = buildPlaceholder();
+                    placeholder.insertBefore( elm );
+                    elm.appendTo( $( '[data-for="input"]', placeholder ) );
+                    input = $( '[data-for="input"]', placeholder );
+                    counting = $( '[data-for="counting"]', placeholder );
+
+                    elm.on( 'keyup', setCharCount ).trigger( 'keyup' );
+                };
+
+                var api = {
+                    destroy: destroy
+                };
+
+                start();
+
+                return api;
+            };
+
+            $('[data-character-limit]').each( function () {
+                $(this).data( 'character-limit', new app( this ) );
+            });
 
         };
 

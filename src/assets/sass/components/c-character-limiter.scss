@@ -1,0 +1,24 @@
+
+.c-character-limiter {
+	position: relative;
+	&__input {
+		padding-right: 30px;
+	}
+	&__counting {
+		position: absolute;
+		z-index: 2;
+		top: 0; right: 0; bottom: 0;
+		width: 33px;
+		background: #2dab5e;
+		color: white;
+		line-height: 34px;
+		border-radius: 0 4px 4px 0;
+		text-align: center;
+		&.warning {
+			background: #f39c12;
+		}
+		&.danger {
+			background: #e74c3c;
+		}
+	}
+}
