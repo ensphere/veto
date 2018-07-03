@@ -1,19 +1,82 @@
-
 @import 'components/c-ajax-filter';
 @import 'components/c-character-limiter';
 @import 'layouts/l-small-right-sidebar';
 
 .semantic-ui-modal {
-  .redactor-toolbar li a {
-    padding: 9px;
-  }
+	.redactor-toolbar li a {
+		padding: 9px;
+	}
 }
 
 .sortable-chosen {
-  color: white;
-  background-color: #1abc9c;
+	color: white;
+	background-color: #1abc9c;
 }
 
 .sortable-ghost {
-  opacity: 0.3;
+	opacity: 0.3;
+}
+
+#redactor-modal {
+	footer {
+		margin: 0;
+		width: 100%;
+		display: block;
+		overflow: hidden;
+		padding: 0 40px 30px;
+		button {
+			width: auto;
+			font-size: 16px;
+			padding: 15px 30px;
+			&.redactor-modal-close-btn {
+				background-color: #e74c3c;
+				color: white;
+			}
+			&.btn-primary {
+				background-color: #27ae60;
+				color: white;
+			}
+		}
+	}
+	.ui-dialog-titlebar-close {
+		position: absolute;
+		top: 16px;
+		right: 12px;
+		font-size: 30px;
+		line-height: 30px;
+		padding: 0 4px;
+		color: #000;
+		opacity: .3;
+		cursor: pointer;
+		border: none;
+		&:before {
+			content: '\00d7';
+		}
+		span {
+			display: none;
+		}
+	}
+	section + section {
+		padding-top: 0;
+	}
+}
+
+#redactor-modal input[type="text"],
+#redactor-modal input[type="password"],
+#redactor-modal input[type="email"],
+#redactor-modal input[type="url"],
+#redactor-modal select {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	font-family: inherit;
+	font-size: 16px;
+	height: 40px;
+	outline: 0;
+	vertical-align: middle;
+	background-color: #fff;
+	border: 1px solid #cacfd4;
+	border-radius: .1875em;
+	box-shadow: none;
+	padding: 0 .5em;
 }

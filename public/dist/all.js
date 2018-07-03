@@ -288,10 +288,18 @@ $.fn.ensphere = new function() {
             $( '> a', $('#sidebar-menu .active-url-parent:eq(0)').parents('#sidebar-menu .has-children:eq(0)') ).trigger( 'click' );
         };
 
+        var forceModalCloseBox = function()
+        {
+            $(document).on( 'mousedown', '.ui-dialog-titlebar-close', function(){
+                $('textarea').redactor('modal.close');
+            });
+        };
+
         var onDocumentReady = function()
         {
             parseNotifications();
             CharacterLimiter();
+            forceModalCloseBox();
             //openMenuWhenActiveUrlParentIsPresent();
         };
 

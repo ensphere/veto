@@ -124,4 +124,59 @@
 .sortable-ghost {
   opacity: 0.3; }
 
+#redactor-modal footer {
+  margin: 0;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  padding: 0 40px 30px; }
+  #redactor-modal footer button {
+    width: auto;
+    font-size: 16px;
+    padding: 15px 30px; }
+    #redactor-modal footer button.redactor-modal-close-btn {
+      background-color: #e74c3c;
+      color: white; }
+    #redactor-modal footer button.btn-primary {
+      background-color: #27ae60;
+      color: white; }
+
+#redactor-modal .ui-dialog-titlebar-close {
+  position: absolute;
+  top: 16px;
+  right: 12px;
+  font-size: 30px;
+  line-height: 30px;
+  padding: 0 4px;
+  color: #000;
+  opacity: .3;
+  cursor: pointer;
+  border: none; }
+  #redactor-modal .ui-dialog-titlebar-close:before {
+    content: '\00d7'; }
+  #redactor-modal .ui-dialog-titlebar-close span {
+    display: none; }
+
+#redactor-modal section + section {
+  padding-top: 0; }
+
+#redactor-modal input[type="text"],
+#redactor-modal input[type="password"],
+#redactor-modal input[type="email"],
+#redactor-modal input[type="url"],
+#redactor-modal select {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: 16px;
+  height: 40px;
+  outline: 0;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #cacfd4;
+  border-radius: .1875em;
+  box-shadow: none;
+  padding: 0 .5em; }
+
 /*# sourceMappingURL=app.css.map */
