@@ -691,6 +691,12 @@ $.fn.ensphere = new function() {
             return attributes;
         };
 
+
+        this.route  = function( name, parameters )
+        {
+            return LaravelRoutes.route( name, parameters );
+        };
+
         /**
          *
          * @param response
@@ -767,6 +773,7 @@ $.fn.ensphere = new function() {
 
         $(document).ready(onDocumentReady);
         $(window).load(onWindowLoad);
+
 
     };
 };
