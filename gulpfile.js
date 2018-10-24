@@ -8,6 +8,11 @@ elixir.config.js.outputFolder = 'dist';
 elixir(function(mix) {
     mix
         .sass( ["main.scss"] )
-        .scripts( ["main.js"] )
+        .scripts( [
+            "bootstrap.js",
+            "routes.js",
+            "filter.js",
+            "veto.js"
+        ] )
         .copy( "src/assets/images/", "dist/images/" );
 });
