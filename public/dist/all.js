@@ -182,8 +182,7 @@ $.fn.ajaxFilter = function( _options )
             elm.on( 'mouseleave', onItemMouseLeaveHandler );
             elm.on( 'click', function(e) {
                 options.onSelectedItem( $(this), e, items[ $( this )[0].uid ] );
-                closeAndClearSearchBox();
-                removeNoResultsIfNotEmpty();
+                $(this).hide();
             });
         };
 
