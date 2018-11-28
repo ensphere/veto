@@ -1,13 +1,8 @@
 node_modules
-
 .idea/encodings.xml
-
 .idea/vcs.xml
-
 .idea/veto.iml
-
 .idea/workspace.xml
-
 .idea/modules.xml
-
 .idea/blade.xml
+.idea

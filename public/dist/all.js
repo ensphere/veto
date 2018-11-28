@@ -743,8 +743,8 @@ $.fn.ensphere = new function() {
                                             var errors = [];
                                             /** Validation error */
                                             var response = JSON.parse( xhr.responseText );
-                                            for( var i in response ) {
-                                                errors.push( response[i][0] );
+                                            for( var i in response.errors ) {
+                                                errors.push( response.errors[i][0] );
                                             }
                                             modalError( errors, modal );
                                             break;

@@ -1,4 +1,4 @@
-var elixir = require('laravel-elixir');
+let elixir = require('laravel-elixir');
 
 elixir.config.assetsPath = 'src/assets';
 elixir.config.publicPath = 'public';
