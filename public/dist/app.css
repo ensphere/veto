@@ -6,7 +6,6 @@
   .c-ajax-filter__label {
     display: block; }
   .c-ajax-filter__input {
-    width: 800px;
     max-width: 100%;
     border-radius: .28571429rem; }
   .c-ajax-filter__results {

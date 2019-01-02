@@ -5,6 +5,10 @@ $.ajaxSetup({
     }
 });
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
 
 /**
  * Laravel Routes
@@ -236,6 +240,9 @@ $.fn.ajaxFilter = function( _options )
         var addTableBodyRow = function( model )
         {
             var row = $('<tr />').attr( 'data-row-id', model[options.itemIndex] );
+            if( $( '[data-for="no-results"]', api.table.body ).length ) {
+                $( '[data-for="no-results"]', api.table.body ).remove();
+            }
             options.tableColumns.forEach( function( column ) {
                 $('<td />').text( model[column] ).appendTo( row );
             });
@@ -286,9 +293,9 @@ $.fn.ajaxFilter = function( _options )
 
             var row = $('<tr />');
             options.tableColumns.forEach( function( column ) {
-                $('<th />').text( column ).appendTo( row );
+                $('<th />').text( column.capitalize() ).appendTo( row );
             });
-            $('<th width="95" />').text( 'actions' ).appendTo( row );
+            $('<th width="95" />').text( 'Actions' ).appendTo( row );
             row.appendTo( api.table.head );
             getCurrentList();
 
